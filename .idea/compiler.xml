@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="demo" />
         <module name="itcast-microservcie-item" />
+        <module name="itcast-microservice-eureka" />
         <module name="itcast-microservice-order" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="demo" target="1.8" />
       <module name="itcast-microservcie-item" target="1.8" />
+      <module name="itcast-microservice-eureka" target="1.8" />
       <module name="itcast-microservice-order" target="1.8" />
     </bytecodeTargetLevel>
   </component>

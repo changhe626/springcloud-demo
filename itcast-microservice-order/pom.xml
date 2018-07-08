@@ -18,7 +18,21 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<properties>
+    <!-- 导入Spring Cloud的依赖管理 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Dalston.SR3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
@@ -34,12 +48,26 @@
 			<artifactId>okhttp</artifactId>
 			<version>3.9.0</version>
 		</dependency>
-       <!-- <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
+        <!-- 导入Eureka服务的依赖 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka-server</artifactId>
+            <!-- 由于我们引入了eureka server的依赖，导致破坏了之前SpringMVC默认的配置，
+            从而导致了响应成了xml。解决方法：排除eureka server中的xml依赖，如下：-->
+			<exclusions>
+				<exclusion>
+					<groupId>com.fasterxml.jackson.dataformat</groupId>
+					<artifactId>jackson-dataformat-xml</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+       <!--  负载均衡
+       <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-ribbon</artifactId>
         </dependency>-->
-	</dependencies>
+
+    </dependencies>
 
 	<build>
 		<finalName>${project.artifactId}</finalName>
