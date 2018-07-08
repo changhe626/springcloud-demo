@@ -1,12 +1,11 @@
-package cn.itcast.microservice.controller;
+package microservice.controller;
 
+import microservice.pojo.Item;
+import microservice.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-
-import cn.itcast.microservice.pojo.Item;
-import cn.itcast.microservice.service.ItemService;
 
 @RestController
 public class ItemController {
@@ -22,7 +21,7 @@ public class ItemController {
 	 */
 	@GetMapping(value = "item/{id}")
 	public Item queryItemById(@PathVariable("id") Long id) {
-		System.out.println(111);
+		System.out.println(222);
 		return itemService.queryItemById(id);
 	}
 

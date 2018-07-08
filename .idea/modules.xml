@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/demo.iml" filepath="$PROJECT_DIR$/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/itcast-microservcie-item/itcast-microservcie-item.iml" filepath="$PROJECT_DIR$/itcast-microservcie-item/itcast-microservcie-item.iml" />
       <module fileurl="file://$PROJECT_DIR$/itcast-microservice-eureka/itcast-microservice-eureka.iml" filepath="$PROJECT_DIR$/itcast-microservice-eureka/itcast-microservice-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/itcast-microservice-item2/itcast-microservice-item2.iml" filepath="$PROJECT_DIR$/itcast-microservice-item2/itcast-microservice-item2.iml" />
       <module fileurl="file://$PROJECT_DIR$/itcast-microservice-order/itcast-microservice-order.iml" filepath="$PROJECT_DIR$/itcast-microservice-order/itcast-microservice-order.iml" />
     </modules>
   </component>

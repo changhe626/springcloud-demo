@@ -2,6 +2,7 @@ package cn.itcast.microservice.order.service;
 
 import cn.itcast.microservice.order.config.UrlConfig;
 import cn.itcast.microservice.order.pojo.Item;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -27,6 +28,7 @@ public class ItemService {
     @Autowired
     private UrlConfig url;
 
+    @HystrixCommand(fallbackMethod = "failMethod")
     public Item queryItemById(Long id) {
         //1.0
         /*return this.restTemplate.getForObject("http://127.0.0.1:8081/item/"
@@ -51,7 +53,14 @@ public class ItemService {
         //负载均衡
         String serviceId="itcast-microservcie-item";
         return this.restTemplate.getForObject("http://" + serviceId + "/item/" + id, Item.class);
-
     }
+
+    //必须和上面的方法一样的放回...
+    // 请求失败执行的方法
+    public Item failMethod(Long id){
+        return new Item(id, "查询商品信息出错!", null, null, null);
+    }
+
+
 
 }

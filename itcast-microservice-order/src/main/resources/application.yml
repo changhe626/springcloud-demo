@@ -14,3 +14,8 @@ eureka:
 spring:
   application:
     name: itcast-microservice-order
+#设置负载均衡的为随机
+itcast-microservice-item:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
