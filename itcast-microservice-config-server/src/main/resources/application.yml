@@ -1,0 +1,5 @@
+server:
+  port: 6678
+spring:
+  application:
+    name: itcast-microservice-config-server
