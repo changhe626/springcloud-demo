@@ -2,6 +2,7 @@ package cn.itcast.microservice.order.service;
 
 import cn.itcast.microservice.order.config.UrlConfig;
 import cn.itcast.microservice.order.pojo.Item;
+import com.netflix.discovery.converters.Auto;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -28,6 +29,9 @@ public class ItemService {
     @Autowired
     private UrlConfig url;
 
+    @Autowired
+    private ItemFeignClient itemFeignClient;
+
     @HystrixCommand(fallbackMethod = "failMethod")
     public Item queryItemById(Long id) {
         //1.0
@@ -51,8 +55,13 @@ public class ItemService {
         return this.restTemplate.getForObject("http://" + url + "/item/" + id, Item.class);*/
 
         //负载均衡
-        String serviceId="itcast-microservcie-item";
-        return this.restTemplate.getForObject("http://" + serviceId + "/item/" + id, Item.class);
+        /*String serviceId="itcast-microservcie-item";
+        return this.restTemplate.getForObject("http://" + serviceId + "/item/" + id, Item.class);*/
+
+        //使用了Feign
+        Item item = itemFeignClient.queryItemById(id);
+        return item;
+
     }
 
     //必须和上面的方法一样的放回...
