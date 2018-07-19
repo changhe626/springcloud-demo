@@ -1,5 +1,6 @@
 package cn.itcast.microservice.controller;
 
+import cn.itcast.microservice.config.JdbcConfigBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,9 @@ public class ItemController {
 	@Autowired
 	private ItemService itemService;
 
+	@Autowired
+	private JdbcConfigBean jdbcConfigBean;
+
 	/**
 	 * 对外提供接口服务，查询商品信息
 	 * 
@@ -25,5 +29,16 @@ public class ItemController {
 		System.out.println(111);
 		return itemService.queryItemById(id);
 	}
+
+
+    /**
+     * 测试是否能够去得到值
+     * @return
+     */
+	@GetMapping("test")
+    public String test(){
+	    return jdbcConfigBean.toString();
+    }
+
 
 }

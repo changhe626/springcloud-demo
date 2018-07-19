@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: microservice
+      uri: http://127.0.0.1:6678/
+      profile: dev
+      label: master

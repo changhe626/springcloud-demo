@@ -3,3 +3,10 @@ server:
 spring:
   application:
     name: itcast-microservice-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/onyx2/springcloud-config-demo.git
+          #username:
+          #password:
