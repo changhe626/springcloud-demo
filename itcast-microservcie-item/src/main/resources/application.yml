@@ -8,7 +8,10 @@ eureka:
     serviceUrl: #Eureka客户端与Eureka服务端进行交互的地址
       defaultZone: http://zhaojun:123@127.0.0.1:6868/eureka/
   instance:
-    prefer-ip-address: true
+    prefer-ip-address: true #将自己的ip地址注册到Eureka服务中
 spring:
   application:
-    name: itcast-microservcie-item   #将自己的ip地址注册到Eureka服务中
+    name: itcast-microservcie-item
+management:
+  security:
+    enabled: false  #是否开启actuator安全认证

@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="demo" />
         <module name="itcast-microservcie-item" />
+        <module name="itcast-microservice-api-gateway" />
+        <module name="itcast-microservice-config-server" />
         <module name="itcast-microservice-eureka" />
         <module name="itcast-microservice-item2" />
         <module name="itcast-microservice-order" />
@@ -16,6 +18,8 @@
     <bytecodeTargetLevel>
       <module name="demo" target="1.8" />
       <module name="itcast-microservcie-item" target="1.8" />
+      <module name="itcast-microservice-api-gateway" target="1.8" />
+      <module name="itcast-microservice-config-server" target="1.8" />
       <module name="itcast-microservice-eureka" target="1.8" />
       <module name="itcast-microservice-item2" target="1.8" />
       <module name="itcast-microservice-order" target="1.8" />

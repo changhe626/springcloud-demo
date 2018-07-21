@@ -12,6 +12,8 @@
         <option value="$PROJECT_DIR$/itcast-microservice-order/pom.xml" />
         <option value="$PROJECT_DIR$/itcast-microservice-eureka/pom.xml" />
         <option value="$PROJECT_DIR$/itcast-microservice-item2/pom.xml" />
+        <option value="$PROJECT_DIR$/itcast-microservice-api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/itcast-microservice-config-server/pom.xml" />
       </list>
     </option>
   </component>

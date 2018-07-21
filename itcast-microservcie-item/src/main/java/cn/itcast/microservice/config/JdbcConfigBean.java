@@ -1,9 +1,11 @@
 package cn.itcast.microservice.config;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Component;
 
-@Component//加入到Spring容器
+@Component     //加入到Spring容器
+@RefreshScope  //需要为动态更新配置内容的bean添加@RefreshScope注解
 public class JdbcConfigBean {
 
 	@Value("${jdbc.url}")
